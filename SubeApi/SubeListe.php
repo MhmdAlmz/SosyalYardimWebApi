@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $QuerySubeListeGetir = $db->prepare("SELECT
     SubeTablo.SubeId as SubeID,
 	SehirTablo.SehirAdi AS SubeIl,
-	SehirTablo.SehirId AS SubeIl,
+	SehirTablo.SehirId AS IlID,
 	CONCAT ( KullaniciBilgileriTablo.KullaniciAdi, ' ', KullaniciBilgileriTablo.KullaniciSoyadi ) AS SubeSorumlusu,
 	KullaniciBilgileriTablo.KullaniciId AS GorevliID
 FROM
@@ -28,7 +28,7 @@ FROM
         }
     }
     $Sonuc["Sonuc"] = "basarili";
-    $Sonuc["HataKodu"] = -1;
+    $Sonuc["Aciklama"] = '';
     $Sonuc["HataKodu"] = -1;
     $Sonuc["SubeListe"] = $subeListe;
     $Sonuc=json_encode($Sonuc);

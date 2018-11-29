@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ca0022e6-372d-4f5f-a7c5-01f00d1dcb9a" name="CentOS - Netiyi" url="http://185.59.46.174">
+        <fileTransfer host="185.59.46.174" port="22" rootFolder="/yuz-tanima" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="902f33b2-5e68-4900-820c-43a847098048" name="CentOs - Netiyi" url="http://185.59.46.174">
+        <fileTransfer host="185.59.46.174" port="22" rootFolder="/var/www" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
