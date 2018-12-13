@@ -14,8 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 	KullaniciBilgileriTablo.KullaniciId AS KullaniciID,
 	SehirTablo.SehirId AS SehirID,
 	SehirTablo.SehirAdi AS Sehir,
+	KullaniciBilgileriTablo.KullaniciEPosta AS EPosta,
+	KullaniciBilgileriTablo.KullaniciTelegramKullaniciAdi AS TelegramKullaniciAdi,
+	KullaniciBilgileriTablo.KullaniciTCKimlikNumarasi AS TCKimlikNo,
+	KullaniciBilgileriTablo.KullaniciMerkezdeMi AS Merkezde,
+	KullaniciBilgileriTablo.KullaniciOnayliMi AS Onayli,
 	KullaniciBilgileriTablo.KullaniciTelefonNumarasi AS Tel,
-	KullaniciBilgileriTablo.KullaniciAdres AS Adres,
 	KullaniciBilgileriTablo.KullaniciAdi AS KullaniciAdi,
 	KullaniciBilgileriTablo.KullaniciSoyadi AS KullaniciSoyadi 
 FROM

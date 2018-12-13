@@ -5,25 +5,11 @@
       <paths name="CentOS - Netiyi">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="CentOs - Netiyi">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="YoncuTemKuryeSocket">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="YoncuTemKuryeWeb">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
