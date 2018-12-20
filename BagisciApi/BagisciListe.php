@@ -10,22 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     require_once("../Guvenlik/VeritabaniBaglanti.php");
     require_once("../Guvenlik/TokenKontrol.php");
 
+
     $QueryKullaniciListeGetir = $db->prepare("SELECT
-	KullaniciBilgileriTablo.KullaniciId AS KullaniciID,
-	SehirTablo.SehirId AS SehirID,
+	KullaniciBilgileriTablo.KullaniciId AS BagisciId,
+	SehirTablo.SehirId AS SehirId,
 	SehirTablo.SehirAdi AS Sehir,
 	KullaniciBilgileriTablo.KullaniciEPosta AS EPosta,
-	KullaniciBilgileriTablo.KullaniciTelegramKullaniciAdi AS TelegramKullaniciAdi,
-	KullaniciBilgileriTablo.KullaniciTCKimlikNumarasi AS TCKimlikNo,
-	KullaniciBilgileriTablo.KullaniciMerkezdeMi AS Merkezde,
-	KullaniciBilgileriTablo.KullaniciOnayliMi AS Onayli,
+	KullaniciBilgileriTablo.KullaniciAdres AS Adres,
 	KullaniciBilgileriTablo.KullaniciTelefonNumarasi AS Tel,
-	KullaniciBilgileriTablo.KullaniciAdi AS KullaniciAdi,
-	KullaniciBilgileriTablo.KullaniciSoyadi AS KullaniciSoyadi 
+	KullaniciBilgileriTablo.KullaniciAdi AS Ad,
+	KullaniciBilgileriTablo.KullaniciSoyadi AS Soyad 
 FROM
 	KullaniciBilgileriTablo
 	INNER JOIN SehirTablo ON SehirTablo.SehirId = KullaniciBilgileriTablo.[SehirTablo.SehirId]
-WHERE KullaniciBilgileriTablo.BagisciMi=0");
+WHERE KullaniciBilgileriTablo.BagisciMi=1");
     $QueryKullaniciListeGetir->execute();
     $kullaniciListe = array();
     if ($QueryKullaniciListeGetir->rowCount()) {
@@ -36,7 +34,7 @@ WHERE KullaniciBilgileriTablo.BagisciMi=0");
     $Sonuc["Sonuc"] = "basarili";
     $Sonuc["Aciklama"] = '';
     $Sonuc["HataKodu"] = -1;
-    $Sonuc["KullaniciListe"] = $kullaniciListe;
+    $Sonuc["BagisciListe"] = $kullaniciListe;
     $Sonuc=json_encode($Sonuc);
     print_r($Sonuc);
 

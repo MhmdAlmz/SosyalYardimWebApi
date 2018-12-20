@@ -185,6 +185,7 @@ FROM
 	KullaniciBilgileriTablo 
 WHERE
 	KullaniciBilgileriTablo.KullaniciEPosta= :KullaniciEPosta 
+    AND KullaniciBilgileriTablo.BagisciMi=0
 	AND KullaniciBilgileriTablo.KullaniciSifre= :Sifre");
     $QueryGirisBilgileriGetir->bindParam(":KullaniciEPosta", $kullaniciEPosta, PDO::PARAM_STR);
     $QueryGirisBilgileriGetir->bindParam(":Sifre", $sifre, PDO::PARAM_STR);

@@ -1,4 +1,5 @@
 <?php
+
 require_once("../HataKodlari.php");
 $Sonuc = array();
 

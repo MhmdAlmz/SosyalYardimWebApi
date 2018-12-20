@@ -29,6 +29,7 @@ if (!(
 	KullaniciBilgileriTablo.KullaniciOnayliMi ,
 	KullaniciBilgileriTablo.KullaniciTelefonNumarasi ,
 	KullaniciBilgileriTablo.KullaniciAdi ,
+	KullaniciBilgileriTablo.BagisciMi ,
 	KullaniciBilgileriTablo.KullaniciSoyadi ) 
 	VALUES (
 	:SehirID,
@@ -39,6 +40,7 @@ if (!(
     :Onayli,
     :Tel,
     :KullaniciAdi,
+    0,
     :KullaniciSoyadi
 	)");
     $QueryKullaniciEkle->bindParam(":SehirID",

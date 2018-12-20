@@ -11,21 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     require_once("../Guvenlik/TokenKontrol.php");
 
     $QueryKullaniciListeGetir = $db->prepare("SELECT
-	KullaniciBilgileriTablo.KullaniciId AS KullaniciID,
-	SehirTablo.SehirId AS SehirID,
-	SehirTablo.SehirAdi AS Sehir,
-	KullaniciBilgileriTablo.KullaniciEPosta AS EPosta,
-	KullaniciBilgileriTablo.KullaniciTelegramKullaniciAdi AS TelegramKullaniciAdi,
-	KullaniciBilgileriTablo.KullaniciTCKimlikNumarasi AS TCKimlikNo,
-	KullaniciBilgileriTablo.KullaniciMerkezdeMi AS Merkezde,
-	KullaniciBilgileriTablo.KullaniciOnayliMi AS Onayli,
-	KullaniciBilgileriTablo.KullaniciTelefonNumarasi AS Tel,
-	KullaniciBilgileriTablo.KullaniciAdi AS KullaniciAdi,
-	KullaniciBilgileriTablo.KullaniciSoyadi AS KullaniciSoyadi 
+	CONCAT ( KullaniciAdi, KullaniciSoyadi ) AS Ad,
+	KullaniciId AS ID 
 FROM
-	KullaniciBilgileriTablo
-	INNER JOIN SehirTablo ON SehirTablo.SehirId = KullaniciBilgileriTablo.[SehirTablo.SehirId]
-WHERE KullaniciBilgileriTablo.BagisciMi=0");
+	KullaniciBilgileriTablo");
     $QueryKullaniciListeGetir->execute();
     $kullaniciListe = array();
     if ($QueryKullaniciListeGetir->rowCount()) {
@@ -34,7 +23,6 @@ WHERE KullaniciBilgileriTablo.BagisciMi=0");
         }
     }
     $Sonuc["Sonuc"] = "basarili";
-    $Sonuc["Aciklama"] = '';
     $Sonuc["HataKodu"] = -1;
     $Sonuc["KullaniciListe"] = $kullaniciListe;
     $Sonuc=json_encode($Sonuc);
